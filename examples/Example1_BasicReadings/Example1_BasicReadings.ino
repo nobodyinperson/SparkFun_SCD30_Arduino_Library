@@ -17,7 +17,7 @@
   Open the serial monitor at 9600 baud to see the output
 */
 
-#include <Wire.h>
+#include <WireNoFreeze.h>
 
 //Click here to get the library: http://librarymanager/All#SparkFun_SCD30
 #include "SparkFun_SCD30_Arduino_Library.h" 
