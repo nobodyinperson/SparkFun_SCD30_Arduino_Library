@@ -29,7 +29,11 @@
 #define __SparkFun_SCD30_ARDUINO_LIBARARY_H__
 
 #include "Arduino.h"
+#if ESP8266
 #include <Wire.h>
+#else
+#include <WireNoFreeze.h>
+#endif
 
 //The default I2C address for the SCD30 is 0x61.
 #define SCD30_ADDRESS 0x61
