@@ -62,7 +62,7 @@ boolean SCD30::begin(TwoWire &wirePort)
   if(beginMeasuring() == true) //Start continuous measurements
   {
 	setMeasurementInterval(2); //2 seconds between measurements
-	setAutoSelfCalibration(true); //Enable auto-self-calibration
+	// setAutoSelfCalibration(true); //Enable auto-self-calibration
 	
 	return (true);
   }
