@@ -33,7 +33,11 @@
 #include "WProgram.h"
 #endif
 
+#if ESP8266
+#include <Wire.h>
+#else
 #include <WireNoFreeze.h>
+#endif
 
 //The default I2C address for the SCD30 is 0x61.
 #define SCD30_ADDRESS 0x61
@@ -88,11 +92,11 @@ class SCD30
 	float co2 = 0;
 	float temperature = 0;
 	float humidity = 0;
-	
+
 	//These track the staleness of the current data
 	//This allows us to avoid calling readMeasurement() every time individual datums are requested
 	boolean co2HasBeenReported = true;
 	boolean humidityHasBeenReported = true;
 	boolean temperatureHasBeenReported = true;
-	
+
 };

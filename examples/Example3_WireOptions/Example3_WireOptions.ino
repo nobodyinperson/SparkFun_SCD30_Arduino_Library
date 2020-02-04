@@ -19,7 +19,11 @@
   Note: 100kHz I2C is fine, but according to the datasheet 400kHz I2C is not supported by the SCD30
 */
 
+#if ESP8266
+#include <Wire.h>
+#else
 #include <WireNoFreeze.h>
+#endif
 
 //Click here to get the library: http://librarymanager/All#SparkFun_SCD30
 #include "SparkFun_SCD30_Arduino_Library.h"

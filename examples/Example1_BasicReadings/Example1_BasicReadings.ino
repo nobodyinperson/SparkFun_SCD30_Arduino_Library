@@ -17,10 +17,14 @@
   Open the serial monitor at 9600 baud to see the output
 */
 
+#if ESP8266
+#include <Wire.h>
+#else
 #include <WireNoFreeze.h>
+#endif
 
 //Click here to get the library: http://librarymanager/All#SparkFun_SCD30
-#include "SparkFun_SCD30_Arduino_Library.h" 
+#include "SparkFun_SCD30_Arduino_Library.h"
 
 SCD30 airSensor;
 
